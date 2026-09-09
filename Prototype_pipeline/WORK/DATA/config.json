@@ -1,0 +1,43 @@
+{
+  "patients": [
+    {
+      "id": "P01",
+      "distance_m": 0.57,
+      "tkeo_factor": 0.8,
+      "ppg_cutoff_hz": 40.0,
+      "files": ["data4ch_0_1.csv", "data4ch_0_2.csv", "data4ch_0_3.csv",
+		"data4ch_0_4.csv", "data4ch_0_5.csv", "data4ch_0_6.csv",
+		"data4ch_0_7.csv", "data4ch_0_8.csv", "data4ch_0_9.csv",
+		"data4ch_0_10.csv", "data4ch_0_11.csv", "data4ch_0_12.csv",
+		"data4ch_0_13.csv", "data4ch_0_14.csv"]
+    },
+    {
+      "id": "P02",
+      "distance_m": 0.45,
+      "tkeo_factor": 0.6,
+      "ppg_cutoff_hz": 40.0,
+      "files": ["data4ch_1_1", "data4ch_1_2", "data4ch_1_3",
+                "data4ch_1_4", "data4ch_1_5", "data4ch_1_6"]
+    },        
+    {
+      "id": "P03",
+      "distance_m": 0.38,
+      "tkeo_factor": 0.4,
+      "ppg_cutoff_hz": 40.0,
+      "files": ["data4ch_4_1", "data4ch_4_2", "data4ch_4_3",
+		"data4ch_4_4", "data4ch_4_5", "data4ch_4_6", "data4ch_4_7"]
+    }
+  ],
+  "global": {
+    "ecg_bandpass_low": 0.5,
+    "ecg_bandpass_high": 40.0,
+    "r_peak_min_rr_sec": 0.4,
+    "foot_search_start_ms": 50,
+    "foot_search_end_ms": 400,
+    "ptt_min_ms": 20,
+    "ptt_max_ms": 200,
+    "output_dir": "processed_data",
+    "model_input_win_before_ms": 100,
+    "model_input_win_after_ms": 500
+  }
+}

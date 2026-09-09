@@ -28,4 +28,4 @@ My Magister's degree thesis
   Принимает данные от микроконтроллера, сохраняет их в формате .csv и подготавливает для дальнейшей обработки. Подробное описание приёмника: [PC_Receiver/python_test/README.md](PC_Receiver/python_test/README.md)
 
 - **Пайплайн обработки** (`Prototype_pipeline/WORK/`)  
-  Выполняет  над полученными данными.
+  Выполняет  над полученными данными. Подробное описание пайплайна: [Prototype_pipeline/WORK/README.md](Prototype_pipeline/WORK/README.md)

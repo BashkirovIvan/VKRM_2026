@@ -1,13 +1,9 @@
 # VKRM_2026
-My Magister's degree thesis
-
-# Выпускная квалификационная работа магистра: 
-# "Разработка программно-аппаратного носимого механоплетизмографического комплекса с магнитными датчиками для оценки состояния сердечно-сосудистой системы"
+Выпускная квалификационная работа магистра: «Разработка программно-аппаратного носимого механоплетизмографического комплекса с магнитными датчиками для оценки состояния сердечно-сосудистой системы»
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.11-blue)
 ![MCU](https://img.shields.io/badge/MCU-MSP430-orange)
-
 
 ## О проекте
 
@@ -21,11 +17,59 @@ My Magister's degree thesis
 
 Проект разработан в рамках дипломной работы и прошёл апробацию на трёх пациентах с различными клиническими профилями.
 
-- **Прошивка для микроконтроллера MSP430** (`MSP430_code/`)  
-  Отвечает за сбор первичных данных с датчиков и их передачу на ПК по USB-UART. Подробное описание прошивки: [MSP430_code/README.md](MSP430_code/README.md)
+## Компоненты системы
 
-- **Приёмник на ПК** (`PC_Receiver/python_test/`)  
-  Принимает данные от микроконтроллера, сохраняет их в формате .csv и подготавливает для дальнейшей обработки. Подробное описание приёмника: [PC_Receiver/python_test/README.md](PC_Receiver/python_test/README.md)
+### Прошивка для микроконтроллера MSP430 (`MSP430_code/`)
+Отвечает за сбор первичных данных с датчиков и их передачу на ПК по USB-UART.  
+Подробное описание: [MSP430_code/README.md](MSP430_code/README.md)
 
-- **Пайплайн обработки** (`Prototype_pipeline/WORK/`)  
-  Выполняет  над полученными данными. Подробное описание пайплайна: [Prototype_pipeline/WORK/README.md](Prototype_pipeline/WORK/README.md)
+### Приёмник на ПК (`PC_Receiver/python_test/`)
+Принимает данные от микроконтроллера, сохраняет их в формате `.csv` и подготавливает для дальнейшей обработки.  
+Подробное описание: [PC_Receiver/python_test/README.md](PC_Receiver/python_test/README.md)
+
+### Пайплайн обработки (`Prototype_pipeline/WORK/`)
+Выполняет алгоритмическую обработку полученных данных: детекцию R-пиков, расчёт PTT/СРПВ, анализ ВСР, нейросетевую оценку PTT и калибровку артериального давления.  
+Подробное описание пайплайна: [Prototype_pipeline/WORK/README.md](Prototype_pipeline/WORK/README.md)  
+Описание модулей: [Prototype_pipeline/WORK/MODULES.md](Prototype_pipeline/WORK/MODULES.md)
+
+## Технологии
+
+| Компонент | Технологии |
+|-----------|------------|
+| Микроконтроллер | MSP430i2040, C, Code Composer Studio |
+| Приёмник | Python 3.8, pyserial, numpy, plotly, pandas |
+| Обработка | Python 3.11, scipy, scikit-learn, TensorFlow, plotly |
+
+## Структура репозитория
+
+## Структура репозитория
+.
+├── MSP430_code/ # Прошивка микроконтроллера
+│ └── README.md
+├── PC_Receiver/
+│ └── python_test/ # Приёмник данных (Jupyter Notebook)
+│ └── README.md
+├── Prototype_pipeline/
+│ └── WORK/ # Пайплайн обработки
+│ ├── README.md
+│ ├── MODULES.md
+│ └── ...
+├── LICENSE
+└── README.md # этот файл
+
+
+## Быстрый старт
+
+1. **Прошивка** — откройте проект в Code Composer Studio, скомпилируйте и загрузите на MSP430i2040.
+2. **Приём данных** — запустите `Project_ECG_v2_csv.ipynb` в Jupyter Notebook (Python 3.8) и укажите COM-порт.
+3. **Обработка** — выполните пайплайн в Google Colab или локально (Python 3.11) согласно инструкциям в `Prototype_pipeline/WORK/README.md`.
+
+## Лицензия
+
+MIT License. Подробнее в [LICENSE](LICENSE).
+
+## Контакты
+
+- Башкиров Иван
+- Email: klikli.tretre@gmail.com
+- GitHub: [@BashkirovIvan](https://github.com/BashkirovIvan)

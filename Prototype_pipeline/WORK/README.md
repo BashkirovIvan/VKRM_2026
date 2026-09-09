@@ -108,13 +108,13 @@
 1) Python 3.9 или выше (рекомендуется 3.11);
 
 2) Библиотеки:
- - 'numpy >= 1.21';
- - 'pandas >= 1.3';
- - 'scipy >= 1.7';
- - 'plotly >= 5.0';
- - 'scikit-learn >= 0.24';
- - 'tensorflow >= 2.8';
- - 'pathlib', 'json', 'argparse'.
+ - numpy >= 1.21;
+ - pandas >= 1.3;
+ - scipy >= 1.7;
+ - plotly >= 5.0;
+ - scikit-learn >= 0.24;
+ - tensorflow >= 2.8;
+ - pathlib, json, argparse.
 
 Для локального запуска создайте requirements.txt с перечисленными версиями.
 
